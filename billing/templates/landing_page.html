@@ -1,4 +1,83 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h3 class="text-center">Welcome Your Water Billing System</h3>
+<div style="margin-top: 70px;">
+    <div class="container-full">
+        <div class="overlay">
+            <div class="card" id="header">
+                <img class="card-img" src="static/images/water_background.jpg">
+                <div class="card-img-overlay text-white text-center">
+                    <div class="forPadding">
+                        <h1>WELCOME</h1>
+                        <h1>TO YOUR WATER BILLING SYTEM</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <footer class="footer_area clearfix text-white footer" style="background-color: rgb(28, 28, 228);">
+                <div class="container-full">
+                    <div class="row">
+                        <!-- Single Widget Area -->
+                        <div class="col-md-4">
+                            <div class="single_widget_area d-flex">
+                                <!-- Footer Menu -->
+                                <div class="ml-0">
+                                    <ul class="mt-3">
+                                        <h4><span>Visit Our </span><a href="blog.html">Blog</a></h4>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Widget Area -->
+                        <div class="col-md-3">
+                            <div class="single_widget_area">
+                                <div class="footer_heading mt-3 ">
+                                    <h4>Subscribe</h4>
+                                </div>
+                                <div class="subscribtion_form">
+                                    <form class="form-inline">
+                                        <div class="md-form my-0">
+                                            <input class="form-control mr-sm-2" type="text"
+                                                placeholder="Your Email Address" aria-label="Search">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Widget Area -->
+                        <div class="col-md-5">
+                            <div class="single_widget_area">
+                                <ul class="footer_widget_menu mt-3">
+                                    <h4>Have an account with us?</h4>
+                                    <h5>Login <a href="{% url 'login' %}"> Here</a></h5>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="mt-2">
+                            <!-- Single Widget Area -->
+                            <div class="col-md-12">
+                                <div class="single_widget_area social-media">
+                                    <div class="footer_social_area">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i
+                                                class="fa fa-facebook mr-4" aria-hidden="true"></i></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i
+                                                class="fa fa-instagram mr-4" aria-hidden="true"></i></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i
+                                                class="fa fa-twitter mr-4" aria-hidden="true"></i></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
+                                                class="fa fa-pinterest mr-4" aria-hidden="true"></i></a>
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i
+                                                class="fa fa-youtube-play mr-4" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
 {% endblock %}
