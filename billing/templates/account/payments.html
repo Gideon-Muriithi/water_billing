@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="margin-top: 80px;">
+    <div class="box-header">
+        <h3 class="box-title text-center">Financial Statements</h3>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="">
+            <div class="box">
+
+                <div class="box-body">
+                    <table class="table table-primary id=table">
+                        <thead>
+                            <tr>
+                            <tr>
+                                <th scope="col">Year</th>
+                                <th scope="col">Month</th>
+                                <th scope="col">B/F</th>
+                                <th scope="col">Amount Due</th>
+                                <th scope="col">Amount Paid</th>
+                                <th scope="col">C/F</th>
+                            </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% for payment in payments %}
+                                <td>{{ payment.Year }}</td>
+                                <td>{{ payment.Month }}</td>
+                                <td>{{ payment.B_F }}</td>
+                                <td>{{ payment.Amount_Due }}</td>
+                                <td>{{ payment.Amount_Paid }}</td>
+                                <td>{{ payment.C_F }}</td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

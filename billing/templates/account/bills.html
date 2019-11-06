@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="margin-top: 80px;">
+    <div class="box">
+        <h3 class="box-title account-details text-center">Monthly Bills</h3>
+    </div>
+    <hr>
+    <div class="container-fluid">
+        <div class="">
+            <div class="box-body">
+                <table class="table table-primary id=table">
+                    <thead>
+                        <tr>
+                        <tr>
+                            <th scope="col">Year</th>
+                            <th scope="col">Month</th>
+                            <th scope="col">Previous Charges</th>
+                            <th scope="col">Current Charges</th>
+                            <th scope="col">Amount Due</th>
+                        </tr>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for bill in bills %}
+                            <td>{{ bill.year }}</td>
+                            <td>{{ bill.month }}</td>
+                            <td>{{ bill.previous_charges }}</td>
+                            <td>{{ bill.current_charges }}</td>
+                            <td>{{ bill.amount_due }}</td>
+                            <td>
+                                <button id="payment_button" type="button" class="btn btn-outline-success btn-sm mt-0"
+                                    data-toggle="modal" data-target="#exampleModalCenter">
+                                    Make a Payment
+                                </button>
+                            </td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Make Payment</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline">
+                            <div class="md-form my-0">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Enter Amount"
+                                    aria-label="Search">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel Payment</button>
+                        <a href="{% url 'payments' %}"><button type="button" class="btn btn-success">Submit
+                                Payment</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+</div>
+{% endblock %}

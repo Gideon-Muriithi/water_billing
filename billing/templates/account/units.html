@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="margin-top: 80px;">
+    <div class="box-header">
+        <h3 class="box-title text-center">Monthly Units Consumed</h3>
+    </div>
+    <hr>
+    <div class="container-fluid">
+            <div class="">
+                <div class="box">
+                    <div class="box-body">
+                        <table class="table table-primary id=table">
+                            <thead>
+                                <tr>
+                                <tr>
+                                    <th scope="col">Year</th>
+                                    <th scope="col">Month</th>
+                                    <th scope="col">Previous Units</th>
+                                    <th scope="col">Current Units</th>
+                                    <th scope="col">Units Due</th>
+                                </tr>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {% for unit in units %}
+                                    <td>{{ unit.year }}</td>
+                                    <td>{{ unit.month }}</td>
+                                    <td>{{ unit.previous_units }}</td>
+                                    <td>{{ unit.current_units }}</td>
+                                    <td>{{ unit.units_due }}</td>
+                                    <td><button type="button" class="btn btn-outline-success btn-sm mt-0">
+                                        <a href="{% url 'bills' %}">Confirm</a></button></td>
+                                    <td><a href="{% url 'units_refute' %}"><button type="button" class="btn btn-outline-warning btn-sm mt-0 ml-0">Refute</button></td></a>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="margin-top: 80px;">
+    <div class="box-header">
+        <h3 class="box-title text-center">Account Status</h3>
+    </div>
+    <hr>
+    <div class="container-fluid">
+            <div class="">
+                <div class="box">
+                    <div class="box-body">
+                        <table class="table table-primary id=table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Account Meter Number</th>
+                                    <th scope="col">Sewer Connection</th>
+                                    <th scope="col">Water Connection</th>
+                                    <th scope="col">Account Category</th>
+                                    <th scope="col">Account Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    {% for status in statuses %}
+                                    <td>{{ status.Account_Meter_Number }}</td>
+                                    <td>{{ status.Water_Connection }}</td>
+                                    <td>{{ status.Sewer_Connection }}</td>
+                                    <td>{{ status.Account_Category }}</td>
+                                    <td>{{ status.Account_Status }}</td>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

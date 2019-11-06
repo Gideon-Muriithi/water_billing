@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="margin-top: 89px;">
+    <h2 class="text-center">Feel free to interact with this site</h2>
+</div>
+<hr>
+<div class=view_project_png>
+</div>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h5><a class="card-title">Home</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>01</h3>
+                        <p>Account Details</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a href="{% url 'account_details' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>02</h3>
+                        <p>Account Status</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="{% url 'account_status' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>03</h3>
+
+                        <p>Account Bills</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <a href="{% url 'bills' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>04</h3>
+                        <p>Payments Made</p>
+                    </div>
+                    <a href="{% url 'payments' %}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+     
+        <div class="card-body">
+            <div class="tab-content p-0">
+                <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 0px;"></div>
+                <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+            </div>
+        </div>
+    
+        <div class="mt-5">
+    <div style="background-color: rgb(202, 234, 247);">
+        <div class="card-header">
+            <h5 class="card-title text-center">Contact Customer Service Representative For Any Queries About Your Account</h5>
+        </div>
+
+            <div class="card-footer">
+                <form action="#" method="post" class="form-group">
+                    <div class="input-group">
+                        <textarea
+                            type="text" name="message" placeholder="Type Message ..." class="form-control">
+                        </textarea>
+    
+                        <div class="">
+                            <button type="button" class="btn btn-outline-info btn-lg">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        </section>
+    </div>
+{% endblock %}
